@@ -1,15 +1,15 @@
 // ignore_for_file: use_key_in_widget_constructors
 import 'package:flutter/material.dart';
+import 'package:animated_text_kit/animated_text_kit.dart';
 
 void main() => runApp(MainPageSecuritySystemApp());
 
 class MainPageSecuritySystemApp extends StatefulWidget {
   @override
-  State<MainPageSecuritySystemApp> createState() =>
-      _MainPageSecuritySystemAppState();
+  State<MainPageSecuritySystemApp> createState() => _SecuritySystemAppState();
 }
 
-class _MainPageSecuritySystemAppState extends State<MainPageSecuritySystemApp> {
+class _SecuritySystemAppState extends State<MainPageSecuritySystemApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -17,7 +17,22 @@ class _MainPageSecuritySystemAppState extends State<MainPageSecuritySystemApp> {
         body: Center(
           child: Scaffold(
             backgroundColor: Colors.grey,
+            body: Center(
+              child: AnimatedTextKit(
+                animatedTexts: [
+                  TypewriterAnimatedText(
+                    "Welcome!",
+                    textStyle: const TextStyle(
+                      fontSize: 48,
+                      fontWeight: FontWeight.bold,
+                    ),
+                    speed: const Duration(milliseconds: 250),
+                  ),
+                ],
+              ),
+            ),
             drawer: Drawer(
+              backgroundColor: Colors.grey,
               child: ListView(
                 padding: EdgeInsets.zero,
                 children: [
@@ -25,21 +40,31 @@ class _MainPageSecuritySystemAppState extends State<MainPageSecuritySystemApp> {
                     decoration: BoxDecoration(
                       color: Colors.grey,
                     ),
-                    child: Text("Test"),
+                    child: Center(
+                      child: Text(
+                        "RäSecure",
+                        style: TextStyle(fontSize: 48),
+                      ),
+                    ),
                   ),
                   ListTile(
                     leading: const Icon(
                       Icons.home,
                     ),
-                    title: const Text("Page 1"),
+                    title: const Text("Home"),
                     onTap: (() => Navigator.pop(context)),
                   ),
                   ListTile(
                     leading: const Icon(
                       Icons.alarm,
                     ),
-                    title: const Text("Page 2"),
+                    title: const Text("Alarms"),
                     onTap: () => Navigator.pop(context),
+                  ),
+                  ListTile(
+                    leading: const Icon(Icons.settings),
+                    title: const Text("Settings"),
+                    onTap: (() => Navigator.pop(context)),
                   )
                 ],
               ),
