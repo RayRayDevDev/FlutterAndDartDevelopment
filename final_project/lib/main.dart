@@ -4,6 +4,7 @@ import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:circular_countdown_timer/circular_countdown_timer.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+//Created by Cole Stanley (RäDev) for CEN 4360C
 void main() => runApp(MaterialApp(
       home: MainPageSecuritySystemApp(),
     ));
@@ -120,7 +121,10 @@ onAlertDialog(context) {
         "Test Complete!",
         style: GoogleFonts.goudyBookletter1911(fontWeight: FontWeight.bold),
       ),
-      content:  Text("Successfully completed Alarm Testing!", style: GoogleFonts.goudyBookletter1911(fontWeight: FontWeight.bold),),
+      content: Text(
+        "Successfully completed Alarm Testing!",
+        style: GoogleFonts.goudyBookletter1911(fontWeight: FontWeight.bold),
+      ),
       actions: [
         TextButton(
           onPressed: () => Navigator.push(
@@ -128,8 +132,9 @@ onAlertDialog(context) {
               MaterialPageRoute(
                 builder: (context) => AlarmsScreen(),
               )),
-          child:  Text(
-            "Test Again", style: GoogleFonts.goudyBookletter1911(fontWeight: FontWeight.bold),
+          child: Text(
+            "Test Again",
+            style: GoogleFonts.goudyBookletter1911(fontWeight: FontWeight.bold),
           ),
         ),
         TextButton(
@@ -138,7 +143,10 @@ onAlertDialog(context) {
                 MaterialPageRoute(
                   builder: (context) => HomeScreen(),
                 )),
-            child: Text("Go Back Home", style: GoogleFonts.goudyBookletter1911(fontWeight: FontWeight.bold,))
+            child: Text("Go Back Home",
+                style: GoogleFonts.goudyBookletter1911(
+                  fontWeight: FontWeight.bold,
+                )))
       ]);
   return alert;
 }
